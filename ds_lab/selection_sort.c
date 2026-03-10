@@ -1,0 +1,34 @@
+#include <stdio.h>
+void sort(int *ptr, int n){
+	int i,j,temp;
+	for(i=0;i<n-1;i++)
+        {
+                for(j=i+1;j<n;j++)
+                {
+                        if(*(ptr+j)<*(ptr+i))
+                        {
+                                temp=*(ptr+i);
+                                *(ptr+i)=*(ptr+j);
+                                *(ptr+j)=temp;
+                        }
+                }
+        }
+        printf("sorted array is\n");
+        for(i=0;i<n;i++)
+        {
+                printf("%d\n",*(ptr+i));
+        }
+}
+int main()
+{
+	int ar[50],i,n;
+	printf("the number of elements of :");
+	scanf("%d",&n);
+	printf("enter the numbers : ");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&ar[i]);
+	}
+	sort(ar,n);
+	return 0;
+}

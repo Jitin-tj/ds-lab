@@ -1,0 +1,50 @@
+#include <stdio.h>
+void matrix_add(int ar[][100],int br[][100], int cr[][100],int m, int n){
+	for(int i=0;i<m;i++){
+		for(int j=0;j<n;j++){
+                	cr[i][j] = ar[i][j] + br[i][j];
+
+		}
+        }
+}
+int main(){
+	int ar[100][100], br[100][100], cr[100][100], i, j, n, m;
+	printf("Enter the row amd column of matrices : ");
+	scanf("%d%d",&m,&n);
+	printf("Enter the elements of the 1st matrix\n :" );
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			scanf("%d",&ar[i][j]);
+		}
+	}
+	printf("Enter the elements of the 2nd %d x %d matrix\n :",m,n);
+        for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                        scanf("%d",&br[i][j]);
+                }
+        }
+	printf("Entered Matrices are \n");
+        for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                        printf("%d\t",ar[i][j]);
+                }
+		printf("\n");
+        }
+	printf("\n");
+	for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                        printf("%d\t",br[i][j]);
+                }
+		printf("\n");
+        }
+        printf("\n-------------------------------------------------------------------\n");
+	matrix_add(ar,br,cr,m,n);
+	printf("\nsum of matrices\n");
+	for(i=0;i<m;i++){
+                for(j=0;j<n;j++){
+                        printf("%d\t",cr[i][j]);
+                }
+                printf("\n");
+        }
+	return 0;
+}
